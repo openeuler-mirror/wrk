@@ -1,0 +1,22 @@
+From 4521b0de64177b030dc946adf1f6e1622bea85fc Mon Sep 17 00:00:00 2001
+From: hht8 <huanghaitao12138@163.com>
+Date: Mon, 28 Jun 2021 17:03:12 +0800
+Subject: [PATCH] 1
+
+---
+ Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Makefile b/Makefile
+index d555f0a..2a4c264 100644
+--- a/Makefile
++++ b/Makefile
+@@ -1,4 +1,4 @@
+-CFLAGS  += -std=c99 -Wall -O2 -D_REENTRANT
++CFLAGS  += -std=c99 -Wall -O2 -D_REENTRANT $(OPTFLAGS)
+ LIBS    := -lpthread -lm -lssl -lcrypto
+ 
+ TARGET  := $(shell uname -s | tr '[A-Z]' '[a-z]' 2>/dev/null || echo unknown)
+-- 
+2.23.0
+
