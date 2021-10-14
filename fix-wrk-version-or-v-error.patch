@@ -1,0 +1,32 @@
+From f5c40ae2cf0306bc0a3d4f937923dd381accdcf7 Mon Sep 17 00:00:00 2001
+From: wang_yue111 <648774160@qq.com>
+Date: Thu, 14 Oct 2021 10:17:03 +0800
+Subject: [PATCH] fix wrk --version/-v error
+
+---
+ src/wrk.h | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+diff --git a/src/wrk.h b/src/wrk.h
+index 2d0ac84..20e79ec 100644
+--- a/src/wrk.h
++++ b/src/wrk.h
+@@ -16,14 +16,13 @@
+ #include "ae.h"
+ #include "http_parser.h"
+ 
++#define VERSION "4.1.0"
+ #define RECVBUF  8192
+ 
+ #define MAX_THREAD_RATE_S   10000000
+ #define SOCKET_TIMEOUT_MS   2000
+ #define RECORD_INTERVAL_MS  100
+ 
+-extern const char *VERSION;
+-
+ typedef struct {
+     pthread_t thread;
+     aeEventLoop *loop;
+-- 
+2.23.0
+
