@@ -1,11 +1,12 @@
 Name:                wrk
 Version:             4.1.0
-Release:             1
+Release:             2
 Summary:             Modern HTTP benchmarking tool
 License:             Apache-2.0
 URL:                 https://github.com/wg/wrk
 Source0:             https://github.com/wg/wrk/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 Patch0:              Make-the-debug-package-compile.patch 
+Patch1:              fix-wrk-version-or-v-error.patch 
 BuildRequires:       pkgconf openssl-devel
 %description
 wrk is a modern HTTP benchmarking tool capable of generating significant
@@ -30,5 +31,8 @@ install -D -m 0755 wrk %{buildroot}%{_bindir}/wrk
 %{_bindir}/wrk
 
 %changelog
+* Thu Oct 14 2021 wangyue <wangyue92@huawei.com> - 4.1.0-2
+- fix wrk --version/-v error
+
 * Mon Jun 28 2021 huanghaitao <huanghaitao8@huawei.com> - 4.1.0-1
 - Package init
