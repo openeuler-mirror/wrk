@@ -1,0 +1,11 @@
+diff -u -r wrk-4.1.0/Makefile wrk-4.1.0/Makefile
+--- wrk-4.1.0/Makefile	2018-01-21 14:00:58.000000000 +0800
++++ wrk-4.1.0/Makefile	2023-06-27 14:53:31.000000000 +0800
+@@ -79,6 +79,7 @@
+ 
+ $(ODIR)/$(LUAJIT):  deps/$(LUAJIT).tar.gz  | $(ODIR)
+ 	@tar -C $(ODIR) -xf $<
++	@sed -i 's/CC= $$(DEFAULT_CC)/CC ?= gcc/g' $(ODIR)/LuaJIT-2.1.0-beta3/src/Makefile
+ 
+ $(ODIR)/$(OPENSSL): deps/$(OPENSSL).tar.gz | $(ODIR)
+ 	@tar -C $(ODIR) -xf $<
